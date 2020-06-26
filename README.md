@@ -113,7 +113,7 @@ bundle exec rails db:setup
 
   example: `curl '/api/v1/users?token=XXX&permission=master'`
 
-* **User Messages*
+* **User Messages**
 
   `GET` | `/users/:id/messages` | `permision=master`
 
