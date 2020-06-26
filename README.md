@@ -68,14 +68,9 @@ bundle exec rails db:setup
 
 * **Required**
 
-  `token=[string]` get your token in profile page
+  `Authorization=[string]` user's token send in header request. Get your token in profile page
 
   It's a constant value for master token
-
-* **Permission**
-
-
-  `permission=master` If is a admin request
 
 ----
 
@@ -83,45 +78,37 @@ bundle exec rails db:setup
 
     `GET` | `/messages`
 
-    example: `curl '/api/v1/messages?token=XXX'`
+    example: `curl '/api/v1/messages' -H 'Authorization: xxx'`
 
 * **Create Message**
 
   `POST` | `/messages` | `message[title]=string&message[content]=string`
 
-  example: `curl -X POST '/api/v1/messages' -d 'message[receiver_email]=matheus@email.com&message[title]=APITEST&message[content]=CONTEUDO&token=XXX'`
+  example: `curl -X POST '/api/v1/messages' -H 'Authorization: xxx' -d 'message[receiver_email]=matheus@email.com&message[title]=APITEST&message[content]=CONTEUDO'`
 
 * **Sent**
 
     `GET` | `/messages/sent`
 
-    example: `curl '/api/v1/messages/sent?token=XXX'`
+    example: `curl '/api/v1/messages/sent' -H 'Authorization: xxx'`
 
 * **Show Message**
 
   `GET` | `/messages/:id`
 
-  example: `curl '/api/v1/messages/1?token=XXX'`
+  example: `curl '/api/v1/messages/1' -H 'Authorization: xxx'`
 
-  OR `curl '/api/v1/messages/1?token=XXX&permission=master'`
+  OR `curl '/api/v1/messages/1' -H 'Authorization: xxx'`
 
-----
+* **Show Profile**
 
-* **Users**
+`GET` | `/profile`
 
-  `GET` | `/users` | `permision=master`
-
-  example: `curl '/api/v1/users?token=XXX&permission=master'`
-
-* **User Messages**
-
-  `GET` | `/users/:id/messages` | `permision=master`
-
-  `curl '/api/v1/users/1/messages?token=XXX&permission=master'`
+example: `curl '/api/v1/profile' -H 'Authorization: xxx'`
 
 * **Update Profile**
 
-  `PATCH` | `/users/:id` | `user[name]=string&user[email]=string&user[password]=string&user[password_confirmation]=string`
+  `PATCH` | `/profile` | `user[name]=string&user[email]=string&user[password]=string&user[password_confirmation]=string`
 
-  example: `curl -g -X PATCH '/api/v1/users/1?token=XXX&user[name]=Mateus'`
+  example: `curl -g -X PATCH '/api/v1/profile?user[name]=Mateus' -H 'Authorization: xxx'`
 
