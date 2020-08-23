@@ -5,7 +5,7 @@ set :app_name, "desafio_agenda"
 set :full_app_name, "desafio_agenda"
 
 set :repo_url, 'git@github.com:renanlucas07/desafio-agenda.git'
-set :rvm_ruby_version, '2.6.2'
+set :rvm_ruby_version, '2.6.3'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
