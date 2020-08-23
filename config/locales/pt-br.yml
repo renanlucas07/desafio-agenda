@@ -59,6 +59,32 @@ pt-BR:
 
 
   activerecord:
+    errors: &errors
+      format: ! '%{attribute} %{message}'
+      messages:
+        required: "- é obrigatório(a)."
+        accepted: "- deve ser aceito."
+        blank: "- este item não pode ficar em branco."
+        confirmation: "- não está de acordo com a confirmação."
+        empty: "- não pode ficar vazio."
+        equal_to: "- deve ser igual a %{count}."
+        even: "- deve ser par."
+        exclusion: "- não está disponível."
+        greater_than: "- deve ser maior que %{count}."
+        greater_than_or_equal_to: "- deve ser maior ou igual a %{count}."
+        inclusion: "- não está incluído na lista."
+        invalid: "- não é válido."
+        less_than: "- deve ser menor que %{count}."
+        less_than_or_equal_to: "- deve ser menor ou igual a %{count}."
+        not_a_number: "- não é um número."
+        not_an_integer: "- não é um número inteiro."
+        odd: "- deve ser ímpar."
+        record_invalid: "- ! 'A validação falhou: : %{errors}'."
+        taken: "- já está em uso."
+        too_long: "- ! 'é muito longa (máximo: %{count})'."
+        too_short: "- ! 'é muito curta (mínimo: %{count} )'."
+        wrong_length: "- não possui o tamanho esperado (%{count} )."
+
     models:
       avaliation: Avaliação
       user: Usuário
@@ -70,6 +96,7 @@ pt-BR:
       answer: Resposta
       administrator: Administrador
       allocation: Alocação
+      message: Mensagem
 
     attributes:
       avaliation:
@@ -127,6 +154,16 @@ pt-BR:
         name: Nome
         email: E-mail
 
+      message:
+        title: Assunto
+        content: Conteúdo
+        from: De
+        to: Para
+        visualized: Visualizada
+        archived: Arquivada
+        response: Resposta
+        receiver: Destinatário
+
 
 # devise/sessions/new
   sign_in: Entrar no Participar
@@ -142,4 +179,3 @@ pt-BR:
   change_password: Mudar senha
   new_password: Nova senha
   new_password_confirmation: Confirme nova senha
-
