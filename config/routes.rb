@@ -30,6 +30,9 @@ Rails.application.routes.draw do
           get 'sent'
         end
       end
+
+      get   '/profile' => 'users#show'
+      patch '/profile' => 'users#update'
     end
   end
 end
