@@ -18,5 +18,5 @@ test:
 production:
   <<: *default
   database: agenda_mail_production
-  username: agenda_mail
-  password: <%= ENV['AGENDA_MAIL_DATABASE_PASSWORD'] %>
+  username: <%= ENV['postgres_username'] %>
+  password: <%= ENV['postgres_password'] %>
